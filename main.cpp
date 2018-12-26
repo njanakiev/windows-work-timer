@@ -26,8 +26,6 @@ int writeLog(char* path, char* name, int duration, char* tag, const time_t timeS
 	strcat(filePath, ".log");
 
 	char tmpTime[20];
-	//TODO: uniform timeformat
-	// or as comments next to the information
 	strftime(tmpTime, 20, "%d%m%y;%H%M%S", timeInfo);
 
 	ofstream file;
@@ -58,7 +56,6 @@ int updateInformation(char* information, char* tag, time_t start, time_t stop){
 }
 
 int notifyFinish(void){
-    // Black Screen as Notificmsg.wParam == 1ation
     HDC screenDC = GetDC(NULL);
     HBRUSH brush = CreateSolidBrush(RGB(0,0,0));
     SelectObject(screenDC, brush);
